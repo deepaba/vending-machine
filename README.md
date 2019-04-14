@@ -8,12 +8,18 @@ Create a virtual vendening machine. There are a selection of products with a pri
 #solution:
 Solution is largely focussed on front-end.
 It is a single page web application developed using angular framework.
-Have used JSON files for data collection.
-Restful web services are used to fetch and update data.
+Have used JSON server for data collection.
+Restful web API services are used to fetch and update data on JSON Server.
 moderate use of Bootstrap framework is included.
+
+The solution is divided into 3 components:
+1.itemList for managing all the products
+2. ShoppingList for display of all the items selected
+3. CustomerCheckout for all the checkout operations.
+
 
 #If I were to spend additional time on the project, I might have done the following:
 1.Improved code quality
 2.Improved User Interface
 3.better error handling,routing methods
-4.Added features such as User Login, product list update, etc
+4.Added features such as User Login, product list update, addressing security concerns
