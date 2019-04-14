@@ -1,0 +1,22 @@
+<div class="container">
+  <div *ngIf="total>0">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of shoppingList">
+            <label>{{item.name}}({{item.quantity}}) </label>
+            <label class="pull-right">${{item.price}}</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 class="pull-right">Total amount:${{total}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="total===0">
+        <h1 class="text text-info">Your shopping cart is empty</h1>
+  </div>
+</div>

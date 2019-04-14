@@ -1,0 +1,21 @@
+<div class="row" style="height:20em;overflow:auto">
+  <div class="col-xs-12">
+    <table class="table table-responsive">
+      <thead>
+        <tr class="info">
+          <th>Item</th>
+          <th>Quantity remaining</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items" style="cursor:pointer" class="active" routerLink="/dialog/{{item.id}}/{{item.name}}/{{item.quantity}}/{{item.price}}">
+          <td>{{item.name}}</td>
+          <td>{{item.quantity}}</td>
+          <td>${{item.price}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

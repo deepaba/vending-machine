@@ -1,0 +1,10 @@
+{
+  "shoppingItems": [
+    {
+      "id": "2",
+      "name": "Product2",
+      "quantity": 10,
+      "price": 100
+    }
+  ]
+}

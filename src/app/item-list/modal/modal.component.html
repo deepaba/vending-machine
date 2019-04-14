@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>{{data.name}}</h2>
+    <form>
+      <div class="row">
+        <div class="col-sm-5 form-group">
+
+          <label for="quantity">Quantity required</label>
+          <input id="quantity" type="number" max="{{data.quantity}}" min="0" class="form-control" name="qty" value="0" [(ngModel)]="itemQuantity" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-danger" type="button" routerLink="/">Cancel</button>&nbsp;
+          <button class="btn btn-primary" type="button" (click)="onClickOk()">OK</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
