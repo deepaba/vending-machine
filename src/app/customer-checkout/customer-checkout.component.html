@@ -1,27 +1,44 @@
 <div class="container">
   <div class="row" *ngIf="totalBill>0">
-    <h1 class="border border-success"> <span class="text text-info">Total bill:{{totalBill}}</span></h1>
+    <h2> <label class="text text-info">Total bill:{{totalBill}}</label></h2>
     <div *ngIf="visible">
       <button class="btn btn-primary" (click)="onClickPay()">Pay</button>  &nbsp;
       <button class="btn btn-danger" routerLink="/">Cancel</button>
     </div>
   </div>
   <div class="row" *ngIf="!visible">
-      <hr />
+    <hr />
     <form>
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="total">Enter amount:</label>
-          <input id="total" type="number" min="{{totalBill}}" class="form-control" name="amount" [(ngModel)]="amountEntered"/>
+          <input id="total" type="number" min="{{totalBill}}" class="form-control" name="amount" [(ngModel)]="amountEntered" />
         </div>
       </div>
-        <div class="row col-sm-5 form-group">
-          <button type="submit" class="btn btn-success" (click)="onCheckout()">Checkout</button>
-        </div>
+      <div class="row col-sm-5 form-group">
+        <button type="submit" class="btn btn-success" (click)="onCheckout()">Checkout</button>
+      </div>
     </form>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
+  <div class="row" *ngIf="tableVisible">
+    <div class="col-xs-12">
+      <table class="table table-responsive">
+        <thead>
+          <tr class="info">
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of shoppingList" class="active">
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+            <td>${{item.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+
