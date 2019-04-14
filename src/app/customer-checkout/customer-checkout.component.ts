@@ -12,6 +12,7 @@ export class CustomerCheckoutComponent implements OnInit {
   amountEntered: number;
   shoppingList: any = [];
   visible = true;
+  tableVisible = false;
   constructor(public restApi: RestApiService, public router: Router) { }
 
   ngOnInit() {
@@ -34,8 +35,9 @@ export class CustomerCheckoutComponent implements OnInit {
         alert("Thank you for shopping with us. Please collect your change");
         this.totalBill = 0;
         this.visible = true;
+        this.tableVisible = true;
         this.deleteAllList();
-      }
+      }else
       this.router.navigate(['/']);
 
     } else {
